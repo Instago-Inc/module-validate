@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>validate Documentation</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 48px 24px;
+        font-family: Arial, sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+      }
+      main {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: 28px;
+      }
+      .intro {
+        font-size: 16px;
+        color: #e2e8f0;
+      }
+      p {
+        margin: 0 0 16px;
+        color: #cbd5f5;
+      }
+      ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+      }
+      a {
+        color: #93c5fd;
+      }
+      .section {
+        margin-top: 28px;
+      }
+      .muted {
+        color: #94a3b8;
+        font-size: 14px;
+        margin: 6px 0 0;
+      }
+      .code {
+        background: #0b1220;
+        border: 1px solid #1e293b;
+        border-radius: 10px;
+        padding: 16px;
+        white-space: pre-wrap;
+        word-break: break-word;
+        font-size: 13px;
+        line-height: 1.5;
+        color: #e2e8f0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>module/validate - V8 module</h1>
+      <p class="intro">Validate input data quickly and consistently before it moves deeper into your workflow. This module keeps checks simple and predictable so you can catch common issues early without cluttering your step code.</p>
+      <p class="muted">Learn more at <a href="https://instago.ai" target="_blank" rel="noopener">https://instago.ai</a>.</p>
+      <div class="section">
+        <h2>Technical reference</h2>
+        <h1>module/validate - V8 module</h1>
+<p>Validate input data quickly and consistently before it moves deeper into your workflow. This module keeps checks simple and predictable so you can catch common issues early without cluttering your step code.</p>
+<p>It is designed to fit neatly into the hgi-v8 module ecosystem. Learn more at https://instago.ai.</p>
+<h2>Technical reference</h2>
+<h3>Exports</h3>
+<ul>
+<li><code>requireKeys(obj, keys)</code> -&gt; <code>{ ok, error? }</code></li>
+<li><code>isEmail(str)</code> -&gt; <code>boolean</code></li>
+<li><code>isISODate(str)</code> -&gt; <code>boolean</code> (YYYY-MM-DD, valid date)</li>
+<li><code>isCurrency(str)</code> -&gt; <code>boolean</code> (e.g., <code>123</code>, <code>123.45</code>, <code>123,45</code>)</li>
+<li><code>isIban(str)</code> -&gt; <code>boolean</code> (IBAN mod-97 check)</li>
+</ul>
+<h3>Usage</h3>
+<pre class="code"><code>
+const validate = require(&#x27;validate@latest&#x27;);
+
+const required = validate.requireKeys({ a: 1 }, [&#x27;a&#x27;]);
+const isEmail = validate.isEmail(&#x27;user@example.com&#x27;);
+</code></pre>
+<h3>Configuration</h3>
+<p>No configuration or env keys are required.</p>
+<h3>Examples</h3>
+<pre class="code"><code>
+const validate = require(&#x27;validate@latest&#x27;);
+
+validate.requireKeys({ a: 1 }, [&#x27;a&#x27;]); // { ok: true }
+validate.isEmail(&#x27;user@example.com&#x27;);  // true
+validate.isISODate(&#x27;2025-01-31&#x27;);      // true
+validate.isCurrency(&#x27;12.50&#x27;);          // true
+validate.isIban(&#x27;DE44500105175407324931&#x27;); // true
+</code></pre>
+      </div>
+      
+    </main>
+  </body>
+</html>

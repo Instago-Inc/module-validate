@@ -1,5 +1,5 @@
-const t = require('utest@1.0.0');
-const v = require('validate@1.0.0');
+const t = require('utest@latest');
+const v = require('validate@latest');
 
 t.test('requireKeys', () => {
   t.expect(v.requireKeys({ a: 1 }, ['a']).ok).toBe(true);
